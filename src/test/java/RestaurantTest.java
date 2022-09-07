@@ -33,6 +33,13 @@ class RestaurantTest {
     }
 
     @Test
+    public void when_selected_the_items_it_shows_the_overall_total_of_the_item_selected(){
+        newRestaurant();
+        newValue = restaurant.getMenu();
+        assertEquals(250, restaurant.getSelectedValue(newValue));
+    }
+
+    @Test
     public void adding_item_to_menu_should_increase_menu_size_by_1(){
         LocalTime openingTime = LocalTime.parse("10:30:00");
         LocalTime closingTime = LocalTime.parse("22:00:00");
